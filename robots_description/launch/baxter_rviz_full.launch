@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+  <param name="robot_description" command="$(find xacro)/xacro.py --inorder $(find baxter_description)/urdf/baxter_full.urdf.xacro
+                                           gazebo:=false
+                                           pedestal:=true
+                                           left_camera_frame:=false
+                                           left_ft_sensor:=true
+                                           right_camera_frame:=true
+                                           right_ft_sensor:=true
+                                           left_sake_gripper:=false
+                                           left_electric_gripper:=true
+                                           left_null_gripper:=false
+                                           right_sake_gripper:=false
+                                           right_electric_gripper:=true
+                                           right_null_gripper:=false
+                                           l_finger:=extended_narrow
+                                           l_finger_slot:=2
+                                           l_finger_tip:=paddle_tip
+                                           l_finger_grasp:=inner
+                                           r_finger:=extended_narrow
+                                           r_finger_slot:=2
+                                           r_finger_tip:=paddle_tip
+                                           r_finger_grasp:=inner
+         "/>
+			
+  <!-- send fake joint values -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="true"/>
+  </node>
+
+  <!-- Combine joint values -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+  <!-- Show in RViz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d '$(find robots_description)/launch/pa_demo_scene.rviz'"/>
+
+</launch>
