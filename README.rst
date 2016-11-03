@@ -1,3 +1,33 @@
+In my latest work,I improve the baxter urdfs.Changes show in the folders baxter_description and robots_description
+
+If you want to show source of the launch file of baxter
+try this:
+
+
+     roslaunch robots_description baxter_rviz_full.launch
+          or
+     roslaunch robots_description baxter_gazebo_full.launch
+
+
+
+If you want to show the latest model of baxter in no time
+try this:
+
+     roslaunch robots_description baxter_rviz_r_ft_camera.launch
+          or
+     roslaunch robots_description baxter_gazebo_r_ft_camera.launch
+
+
+
+
+
+
+
+
+
+
+
+
 baxter_common
 ==============
 
