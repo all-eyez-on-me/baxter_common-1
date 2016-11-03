@@ -37,14 +37,14 @@
                   right_sake_gripper:=false
 
 
-                  l_finger:=extended_narrow
-                  l_finger_slot:=2
-                  l_finger_tip:=paddle_tip
+                  l_finger:=standard_narrow
+                  l_finger_slot:=6
+                  l_finger_tip:=basic_soft_tip
                   l_finger_grasp:=inner
                   
-                  r_finger:=extended_narrow
-                  r_finger_slot:=2
-                  r_finger_tip:=paddle_tip
+                  r_finger:=standard_narrow
+                  r_finger_slot:=6
+                  r_finger_tip:=basic_soft_tip
                   r_finger_grasp:=inner"/>
 
   <!-- We resume the logic in empty_world.launch, changing the name of the world to be launched -->

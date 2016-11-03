@@ -51,7 +51,7 @@
   <xacro:if value="$(arg left_electric_gripper)">
     <!-- Left End Effector -->
     <xacro:include filename="$(find baxter_description)/urdf/left_end_pa_effector.urdf.xacro" >
-
+      <xacro:arg name="left_camera_frame" default="$(arg left_camera_frame)"/>
       <xacro:arg name="l_finger" default="$(arg l_finger)"/>
       <xacro:arg name="l_finger_slot" default="$(arg l_finger_slot)"/>
       <xacro:arg name="l_finger_tip" default="$(arg l_finger_tip)"/>
@@ -63,6 +63,7 @@
   <xacro:if value="$(arg right_electric_gripper)">
     <!-- Right End Effector -->
     <xacro:include filename="$(find baxter_description)/urdf/right_end_pa_effector.urdf.xacro" >
+      <xacro:arg name="right_camera_frame" default="$(arg right_camera_frame)"/>
       <xacro:arg name="r_finger" default="$(arg r_finger)"/>
       <xacro:arg name="r_finger_slot" default="$(arg r_finger_slot)"/>
       <xacro:arg name="r_finger_tip" default="$(arg r_finger_tip)"/>

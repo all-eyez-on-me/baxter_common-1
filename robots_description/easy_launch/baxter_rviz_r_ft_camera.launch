@@ -16,11 +16,11 @@
                                            
                                            l_finger:=standard_narrow
                                            l_finger_slot:=6
-                                           l_finger_tip:=basic_hard_tip
+                                           l_finger_tip:=basic_soft_tip
                                            l_finger_grasp:=inner
                                            r_finger:=standard_narrow
                                            r_finger_slot:=6
-                                           r_finger_tip:=basic_hard_tip
+                                           r_finger_tip:=basic_soft_tip
                                            r_finger_grasp:=inner
          "/>
 			

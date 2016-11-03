@@ -32,7 +32,7 @@
 
         <!--camera frame  -->    
     <xacro:if value="${camera_frame}">
-        <link name="${side}_gripper_base1">
+<!--        <link name="${side}_gripper_base1">
           <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
@@ -52,15 +52,117 @@
             <inertia ixx="2e-08" ixy="0" ixz="0" iyy="3e-08" iyz="0" izz="2e-08"/>
           </inertial>
         </link>
+-->
 
-
-           <!--camera frame joint -->
+<!--camera frame joint -->
+<!--
     <joint name="${side}_gripper_base_camera_frame" type="fixed">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <parent link="${side}_hand"/>
       <child link="${side}_gripper_base1"/>
-    </joint>    
+    </joint>
+-->
+    
+  <link name="${side}_camera_frame">
+    <inertial>
+      <origin
+        xyz="0.024842 -0.00021599 0.048722"
+        rpy="0 0 0" />
+      <mass
+        value="0.08" />
+      <inertia
+        ixx="8.4498E-05"
+        ixy="-1.8832E-09"
+        ixz="1.705E-07"
+        iyy="7.8484E-05"
+        iyz="-2.2039E-07"
+        izz="7.3534E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rethink_ee_description/meshes/electric_gripper/female_camera/camera_frame.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rethink_ee_description/meshes/electric_gripper/female_camera/camera_frame.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="${side}_female_holder">
+    <inertial>
+      <origin
+        xyz="1.2757E-10 9.385E-11 -0.001967"
+        rpy="0 0 0" />
+      <mass
+        value="0.0301" />
+      <inertia
+        ixx="9.4008E-06"
+        ixy="-3.1962E-14"
+        ixz="3.1794E-15"
+        iyy="3.9813E-06"
+        iyz="2.3567E-15"
+        izz="1.3208E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rethink_ee_description/meshes/electric_gripper/female_camera/female_holder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rethink_ee_description/meshes/electric_gripper/female_camera/female_holder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="${side}_camera_frame_joint"
+    type="fixed">
+    <origin
+      xyz="0.025 -0.00031879 0.076"
+      rpy="4.7429E-14 8.4242E-30 1.4971E-16" />
+    <parent
+      link="${side}_camera_frame" />
+    <child
+      link="${side}_female_holder" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
 
+  
+    <joint name="${side}_gripper_base_camera_frame" type="fixed">
+      <origin rpy="0 0 ${pi}" xyz="0.020 0 0"/>
+      <parent link="${side}_hand"/>
+      <child link="${side}_camera_frame"/>
+    </joint>
+  
         </xacro:if>
 
 
