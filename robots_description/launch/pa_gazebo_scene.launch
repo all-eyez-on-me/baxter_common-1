@@ -8,15 +8,6 @@
   <arg name="headless" default="false"/>
   <arg name="debug" default="false"/>
 
-  <arg name="sake_ft" default="false"/>
-  <arg name="electric_ft" default="false"/>
-  <arg name="sake_ft_camera" default="false"/>
-  <arg name="electric_ft_camera" default="false"/>
-  <arg name="sake" default="false"/>
-  <arg name="electric" default="false"/>
-  
- 
-
   <!-- These arguments load the electric grippers, for example left_electric_gripper:=true -->
   <arg name="left_electric_gripper" default="true"/>
   <arg name="right_electric_gripper" default="true"/>
@@ -28,29 +19,10 @@
              to launching baxter_world -->
   <arg name="load_robot_description" default="true"/>
   <param if="$(arg load_robot_description)" name="robot_description"
-         command="$(find xacro)/xacro.py --inorder $(find baxter_description)/urdf/baxter_full.urdf.xacro
+         command="$(find xacro)/xacro.py --inorder $(find robots_description)/robots/robot_system_config.urdf.xacro
                   gazebo:=true
                   pedestal:=true
-                  left_camera_frame:=false
-                  left_ft_sensor:=true
-                  right_camera_frame:=true
-                  right_ft_sensor:=true
-                  left_sake_gripper:=false
-                  left_electric_gripper:=true
-                  left_null_gripper:=false
-                  right_sake_gripper:=false
-                  right_electric_gripper:=true
-                  right_null_gripper:=false
-
-
-                  l_finger:=extended_narrow
-                  l_finger_slot:=2
-                  l_finger_tip:=paddle_tip
-                  l_finger_grasp:=inner
-                  r_finger:=extended_narrow
-                  r_finger_slot:=2
-                  r_finger_tip:=paddle_tip
-                  r_finger_grasp:=inner"/>
+                  "/>
 
   <!-- We resume the logic in empty_world.launch, changing the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">

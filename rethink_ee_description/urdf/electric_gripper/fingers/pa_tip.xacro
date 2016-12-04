@@ -7,13 +7,13 @@
    </xacro:if>
     <link name="${parent_link}_tip">
       <visual>
-        <origin rpy="0 0 0" xyz="0 ${-0.011*g_reflect} -0.005"/>
+        <origin rpy="0 0 0" xyz="0 ${-0.011*g_reflect} 0.03"/>
         <geometry>
           <box size="0.02 0.002 0.015"/>
         </geometry>
       </visual>
       <collision>
-        <origin rpy="0 0 0" xyz="0 ${-0.011*g_reflect} -0.005"/>
+        <origin rpy="0 0 0" xyz="0 ${-0.011*g_reflect} 0.03"/>
         <geometry>
           <box size="0.02 0.002 0.015"/>
         </geometry>

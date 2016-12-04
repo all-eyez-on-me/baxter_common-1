@@ -1080,7 +1080,7 @@
   </xacro:if>  
   
   <xacro:unless value="$(arg left_ft_sensor)">
-    <joint name="right_hand" type="fixed">
+    <joint name="left_hand" type="fixed">
       <origin rpy="0 0 0" xyz="0 0 0.11355"/>
       <axis xyz="0 0 1"/>
       <parent link="left_wrist"/>

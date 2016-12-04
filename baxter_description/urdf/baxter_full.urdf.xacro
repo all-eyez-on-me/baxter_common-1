@@ -37,7 +37,7 @@
   <xacro:include filename="$(find baxter_description)/urdf/baxter_base/baxter_base_ft2.urdf.xacro">
   <xacro:arg name="gazebo" value="$(arg gazebo)"/>
   <xacro:arg name="left_ft_sensor" value="$(arg left_ft_sensor)"/>
-  <xacro:arg name="right_ft_sensor" default="$(arg right_ft_sensor)"/>
+  <xacro:arg name="right_ft_sensor" value="$(arg right_ft_sensor)"/>
   </xacro:include>
   
 

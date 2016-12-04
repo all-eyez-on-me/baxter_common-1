@@ -4,7 +4,7 @@
                                            gazebo:=false
                                            pedestal:=true
                                            left_camera_frame:=true
-                                           left_ft_sensor:=true
+                                           left_ft_sensor:=false
                                            right_camera_frame:=true
                                            right_ft_sensor:=true
                                            left_sake_gripper:=false

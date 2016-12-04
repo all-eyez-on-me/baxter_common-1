@@ -10,8 +10,8 @@
                                            left_sake_gripper:=false
                                            left_electric_gripper:=true
                                            left_null_gripper:=false
-                                           right_sake_gripper:=false
-                                           right_electric_gripper:=true
+                                           right_sake_gripper:=true
+                                           right_electric_gripper:=false
                                            right_null_gripper:=false
                                            
                                            l_finger:=standard_narrow
